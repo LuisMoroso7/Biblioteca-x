@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public abstract class Livro {
     private String titulo;
     private String autor;
@@ -7,13 +9,13 @@ public abstract class Livro {
     public Livro(){
 
     }
-
     public Livro(String titulo, String autor, int anoPublicacao, int numeroPaginas) {
         this.titulo = titulo;
         this.autor = autor;
         this.anoPublicacao = anoPublicacao;
         this.numeroPaginas = numeroPaginas;
     }
+
     public String getTitulo() {
         return titulo;
     }
@@ -47,15 +49,15 @@ public abstract class Livro {
                 + ", numeroPaginas=" + numeroPaginas;
     }
 
-    public final int getIdadeLivro(){
-        int anoAtual = localDate.now().getYear();
+    public final int calcularTempoPublicacao() {
+        int anoAtual = LocalDate.now().getYear();
         return anoAtual - this.anoPublicacao;
-    
-    public abstract String getTipoLivro();
-    
-    
+    }
 
+    
+    public abstract String getFormato();
 }
+    
 
 
-}
+

@@ -1,36 +1,16 @@
-public class LivroFisico extends Livro {
-    private int numeroExemplares;
-    private String dimensoes;
+public final class LivroFisico extends Livro {
 
-    public int getNumeroExemplares() {
-        return numeroExemplares;
-    }
-    public void setNumeroExemplares(int numeroExemplares) {
-        this.numeroExemplares = numeroExemplares;
-    }
-    public String getDimensoes() {
-        return dimensoes;
-    }
-    public void setDimensoes(String dimensoes) {
-        this.dimensoes = dimensoes;
-    }
-
-    @Override  
-    public String toString() {
-        String dadosLivro = "Titulo=" + this.getTitulo() 
-                + ", autor=" + this.getAutor()
-                + ", anoPublicacao=" + this.getAnoPublicacao() 
-                + ", numeroPaginas=" + this.getNumeroPaginas();
-
-        return dadosLivro 
-                + ", Exemplares: " + this.getNumeroExemplares()
-                + ", Dimensões" + dimensoes; 
+    public LivroFisico(String titulo, String autor, int anoPublicacao, int numeroPaginas) {
+        super(titulo, autor, anoPublicacao, numeroPaginas);
     }
 
     @Override
-    public String getTipoLivro(){
-        return "Livro Físico";
-    }   
+    public String getFormato() {
+        return "Físico";
+    }
 
-    
+    @Override
+    public String toString() {
+        return super.toString() + " [Físico]";
+    }
 }
